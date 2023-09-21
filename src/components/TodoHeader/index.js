@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+
 import {
     BsFillPlusCircleFill,
     BsFillCaretUpFill,
@@ -14,10 +15,12 @@ const TodoHeader = ({ addTodo }) => {
 
     const handleAddTodo = (event) => {
         if (text) {
+
             const newTodo = {
                 id: uuidv4(),
                 text: text,
                 isCompleted: false,
+
                 estPomodoros,
             };
             addTodo(newTodo);
@@ -63,6 +66,7 @@ const TodoHeader = ({ addTodo }) => {
             )
             }
         </div >
+
     )
 }
 

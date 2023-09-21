@@ -5,3 +5,4 @@ export const TODOS = [
     { id: 4, text: "Learn React", isCompleted: true, estPomodoros: 1 },
     { id: 5, text: "Do excercises", isCompleted: false, estPomodoros: 5 }
 ]
+

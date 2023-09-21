@@ -2,7 +2,6 @@ import Todo from "../Todo";
 
 const TodoList = ({ todos, editTodo, handleChangeStatus, handleDeleteTodo, hanleFilterByStatus }) => {
 
-
     return (
         <div className="todo-list">
             <select onChange={event => hanleFilterByStatus(event.target.value)}>

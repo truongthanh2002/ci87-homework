@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import TodoFooter from "../../components/TodoFooter/Index";
 import TodoList from "../../components/TodoList";
 import TodoHeader from "../../components/TodoHeader";
@@ -35,6 +36,7 @@ const TodoPage = () => {
         });
         setTodos(newTodos);
     }
+
     const handleDeleteTodo = (id) => {
         const newTodos = todos.filter((todo) => todo.id !== id);
         setTodos(newTodos);

@@ -1,11 +1,13 @@
 import "./style.css";
 import { useState } from "react";
+
 import { AiOutlineDelete } from "react-icons/ai";
 
 const Todo = ({ todo, handleChangeStatus, editTodo, handleDeleteTodo }) => {
     const { isCompleted, id, estPomodoros } = todo;
     const [isEditting, setIsEditting] = useState(false);
     const [text, setText] = useState(todo.text)
+
     const todoTextClass = `todo__text ${isCompleted && "todo__text--completed"}`;
     const handleEditTodo = (event) => {
         if (event.key === "Enter" && text) {
@@ -31,6 +33,7 @@ const Todo = ({ todo, handleChangeStatus, editTodo, handleDeleteTodo }) => {
                 ) : (
                     <label
                         className={todoTextClass}
+
                         onDoubleClick={() => setIsEditting(!isEditting)}>{text}
                     </label>
                 )}
@@ -38,6 +41,7 @@ const Todo = ({ todo, handleChangeStatus, editTodo, handleDeleteTodo }) => {
             <button onClick={() => handleDeleteTodo(id)}>
                 <AiOutlineDelete />
             </button>
+
         </div>
     )
 }
