@@ -1,8 +1,10 @@
 import "./style.css";
 import { useState } from "react";
 
-const Todo = ({ todo, handleChangeStatus, editTodo }) => {
-    const { isCompleted, id } = todo;
+import { AiOutlineDelete } from "react-icons/ai";
+
+const Todo = ({ todo, handleChangeStatus, editTodo, handleDeleteTodo }) => {
+    const { isCompleted, id, estPomodoros } = todo;
     const [isEditting, setIsEditting] = useState(false);
     const [text, setText] = useState(todo.text)
 
@@ -31,8 +33,15 @@ const Todo = ({ todo, handleChangeStatus, editTodo }) => {
                 ) : (
                     <label
                         className={todoTextClass}
-                        onDoubleClick={() => setIsEditting(!isEditting)}>{text}</label>
+
+                        onDoubleClick={() => setIsEditting(!isEditting)}>{text}
+                    </label>
                 )}
+            <label>{estPomodoros}</label>
+            <button onClick={() => handleDeleteTodo(id)}>
+                <AiOutlineDelete />
+            </button>
+
         </div>
     )
 }
